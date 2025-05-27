@@ -1,0 +1,181 @@
+import { useState } from "react";
+import { motion } from "framer-motion";
+import { FaInstagram, FaGithub, FaLinkedin, FaPrint } from "react-icons/fa";
+
+const sections = ["Profile", "Projects", "Skills", "Education & Work Exp."];
+
+export default function App() {
+    const [activeSection, setActiveSection] = useState("Profile");
+
+    const renderSection = () => {
+        switch (activeSection) {
+            case "Profile":
+                return (
+                    <motion.div
+                        key="Profile"
+                        initial={{ opacity: 0, x: 20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.5 }}
+                        className="mt-6"
+                    >
+                        <h2 className="text-2xl font-semibold mb-2">Profile</h2>
+                        <p>
+                            Full-stack developer with experience creating web applications for personal use. Currently studying computer engineering. Looking to learn about the IT industry.
+                        </p>
+                        <p>
+                            I have experience in web development, including both frontend and backend technologies, including in AI technologies and SQL and NoSQL databases. But I still have a lot to learn.
+                        </p>
+                        <p>
+                            I consider that I have skills such as commitment, leadership, teamwork, being organized and punctual, and I am always willing to learn new things.
+                        </p>
+                    </motion.div>
+                );
+            case "Projects":
+                return (
+                    <motion.div
+                        key="Projects"
+                        initial={{ opacity: 0, x: 20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.5 }}
+                        className="mt-6"
+                    >
+                        <h2 className="text-2xl font-semibold mb-2">Projects</h2>
+                        <ul className="list-disc pl-6">
+                            <li>PrediBets – Betting predictor chatbot</li>
+                            <p>Made with - FastAPI + NestJS + React + MongoDB</p>
+                            <li>QC Informa – Social network designed for students</li>
+                            <p>Made with - NestJS + React + Postgres</p>
+                        </ul>
+                    </motion.div>
+                );
+            case "Skills":
+                return (
+                    <motion.div
+                        key="Skills"
+                        initial={{ opacity: 0, x: 20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.5 }}
+                        className="mt-6"
+                    >
+                        <h2 className="text-2xl font-semibold mb-4">Skills</h2>
+                        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+                            <div>
+                                <h3 className="text-lg font-semibold mb-2">Lenguajes</h3>
+                                <ul className="list-disc pl-4">
+                                    <li>JavaScript</li>
+                                    <li>PHP</li>
+                                    <li>Python</li>
+                                    <li>C++</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h3 className="text-lg font-semibold mb-2">Frameworks</h3>
+                                <ul className="list-disc pl-4">
+                                    <li>Laravel</li>
+                                    <li>React / Vue</li>
+                                    <li>Node.js</li>
+                                    <li>NestJS</li>
+                                    <li>Tailwind CSS</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h3 className="text-lg font-semibold mb-2">Databases</h3>
+                                <ul className="list-disc pl-4">
+                                    <li>MongoDB</li>
+                                    <li>MySQL</li>
+                                    <li>PostgreSQL</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h3 className="text-lg font-semibold mb-2">Others</h3>
+                                <ul className="list-disc pl-4">
+                                    <li>Git / GitHub</li>
+                                    <li>Teams</li>
+                                    <li>Three.js</li>
+                                    <li>Figma</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </motion.div>
+                );
+            case "Education & Work Exp.":
+                return (
+                    <motion.div
+                        key="Education & Work Exp."
+                        initial={{ opacity: 0, x: 20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.5 }}
+                        className="mt-6"
+                    >
+                        <h2 className="text-2xl font-semibold mb-2">Education & Work Exp.</h2>
+                        <ul className="list-disc pl-6">
+                            <li>CUCEI - Computer Engineering (Studying) since 2022</li>
+                            <li>English level B2</li>
+                        </ul>
+                    </motion.div>
+                );
+            default:
+                return null;
+        }
+    };
+
+    const handlePrint = () => {
+        window.print();
+    };
+
+    return (
+        <div className="min-h-screen flex flex-col justify-between bg-gradient-to-br from-gray-100 to-gray-200 text-gray-800 font-sans">
+            <div className="max-w-4xl mx-auto py-12 px-6">
+
+                <motion.div
+                    initial={{ opacity: 0, x: -30 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 1 }}
+                    className="flex flex-col items-center mb-8"
+                >
+                    <img
+                        src="public/fotoPerfil.JPEG"
+                        alt="Foto de perfil"
+                        className="rounded-full w-28 h-28 mb-4 shadow-lg"
+                    />
+                    <h1 className="text-4xl font-bold mb-1">Brayan Oswaldo Cano López</h1>
+                    <p className="text-gray-500 text-lg">Full Stack Developer</p>
+                </motion.div>
+
+                <nav className="flex justify-center gap-6 border-b pb-4 mb-6">
+                    {sections.map((section) => (
+                        <button
+                            key={section}
+                            onClick={() => setActiveSection(section)}
+                            className={`text-lg font-medium transition-colors duration-300 ${
+                                activeSection === section ? "text-blue-600 border-b-2 border-blue-600" : "text-gray-600 hover:text-blue-500"
+                            }`}
+                        >
+                            {section}
+                        </button>
+                    ))}
+                </nav>
+
+                {/* Sección activa */}
+                {renderSection()}
+            </div>
+
+            <footer className="bg-white border-t py-4 mt-8">
+                <div className="max-w-4xl mx-auto flex justify-center gap-6">
+                    <a href="https://www.instagram.com/oswa_cano/" target="_blank" rel="noopener noreferrer">
+                        <FaInstagram className="w-6 h-6 text-gray-600 hover:text-pink-500" />
+                    </a>
+                    <a href="https://github.com/OswaCano" target="_blank" rel="noopener noreferrer">
+                        <FaGithub className="w-6 h-6 text-gray-600 hover:text-black" />
+                    </a>
+                    <a href="https://linkedin.com/in/oswaldo-cano-847735323" target="_blank" rel="noopener noreferrer">
+                        <FaLinkedin className="w-6 h-6 text-gray-600 hover:text-blue-600" />
+                    </a>
+                    <button onClick={handlePrint}>
+                        <FaPrint className="w-6 h-6 text-gray-600 hover:text-gray-800" />
+                    </button>
+                </div>
+            </footer>
+        </div>
+    );
+}
