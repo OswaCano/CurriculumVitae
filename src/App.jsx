@@ -133,7 +133,7 @@ export default function App() {
                     className="flex flex-col items-center mb-8"
                 >
                     <img
-                        src="../public/fotoPerfil.JPEG"
+                        src="./fotoPerfil.JPEG"
                         alt="Foto de perfil"
                         className="rounded-full w-28 h-28 mb-4 shadow-lg"
                     />
