@@ -90,8 +90,7 @@ export default function App() {
                                 <h3 className="text-lg font-semibold mb-2">Others</h3>
                                 <ul className="list-disc pl-4">
                                     <li>Git / GitHub</li>
-                                    <li>Teams</li>
-                                    <li>Three.js</li>
+                                    <li>Google Teams</li>
                                     <li>Figma</li>
                                 </ul>
                             </div>
@@ -134,7 +133,7 @@ export default function App() {
                     className="flex flex-col items-center mb-8"
                 >
                     <img
-                        src="public/fotoPerfil.JPEG"
+                        src="../public/fotoPerfil.JPEG"
                         alt="Foto de perfil"
                         className="rounded-full w-28 h-28 mb-4 shadow-lg"
                     />
