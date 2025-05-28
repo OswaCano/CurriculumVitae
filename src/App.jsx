@@ -2,7 +2,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { FaInstagram, FaGithub, FaLinkedin, FaPrint } from "react-icons/fa";
 
-const sections = ["Profile", "Projects", "Skills", "Education & Work Exp."];
+const sections = ["Profile", "Projects", "Skills", "Education"];
 
 export default function App() {
     const [activeSection, setActiveSection] = useState("Profile");
@@ -18,12 +18,12 @@ export default function App() {
                         transition={{ duration: 0.5 }}
                         className="mt-6"
                     >
-                        <h2 className="text-2xl font-semibold mb-2">Profile</h2>
-                        <p>
+                        <h2 className="text-2xl font-semibold mb-4 border-b pb-2">Profile</h2>
+                        <p className="mb-2">
                             Full-stack developer with experience creating web applications for personal use. Currently studying computer engineering. Looking to learn about the IT industry.
                         </p>
-                        <p>
-                            I have experience in web development, including both frontend and backend technologies, including in AI technologies and SQL and NoSQL databases. But I still have a lot to learn.
+                        <p className="mb-2">
+                            I have experience in web development, including both frontend and backend technologies, including in AI technologies and SQL and NoSQL databases.
                         </p>
                         <p>
                             I consider that I have skills such as commitment, leadership, teamwork, being organized and punctual, and I am always willing to learn new things.
@@ -39,13 +39,32 @@ export default function App() {
                         transition={{ duration: 0.5 }}
                         className="mt-6"
                     >
-                        <h2 className="text-2xl font-semibold mb-2">Projects</h2>
-                        <ul className="list-disc pl-6">
-                            <li>PrediBets – Betting predictor chatbot</li>
-                            <p>Made with - FastAPI + NestJS + React + MongoDB</p>
-                            <li>QC Informa – Social network designed for students</li>
-                            <p>Made with - NestJS + React + Postgres</p>
-                        </ul>
+                        <h2 className="text-2xl font-semibold mb-4 border-b pb-2">Projects</h2>
+                        <div className="space-y-4">
+                            <div className="card bg-white rounded-xl shadow-md p-4">
+                                <h3 className="text-lg font-semibold">PrediBets – Betting predictor chatbot (in progress)</h3>
+                                <p className="text-sm text-gray-600">Made with - FastAPI + NestJS + React + MongoDB</p>
+                                <a className="text-blue-600 hover:underline" href="https://github.com/OswaCano/PrediBets" target="_blank" rel="noopener noreferrer">Repository</a>
+                                <div>
+                                    <img src="./predibets1.png" alt="PrediBets Screenshot" className="mt-2 rounded-lg shadow-md w-full max-w-md" />
+                                </div>
+                            </div>
+                            <div className="card bg-white rounded-xl shadow-md p-4">
+                                <h3 className="text-lg font-semibold">QC Informa – Social network designed for students</h3>
+                                <p className="text-sm text-gray-600">Made with - NestJS + React + Postgres</p>
+                                <a className="text-blue-600 hover:underline" href="https://github.com/OswaCano/QC-Informa" target="_blank" rel="noopener noreferrer">Repository</a>
+                                <div>
+                                    <img src="./qcInforma1.png" alt="QC Informa Screenshot" className="mt-2 rounded-lg shadow-md w-full max-w-md" />
+                                </div>
+                                <div>
+                                    <img src="./qcInforma2.png" alt="QC Informa Screenshot" className="mt-2 rounded-lg shadow-md w-full max-w-md" />
+                                </div>
+                                <div>
+                                    <img src="./qcInforma3.png" alt="QC Informa Screenshot" className="mt-2 rounded-lg shadow-md w-full max-w-md" />
+                                </div>
+
+                            </div>
+                        </div>
                     </motion.div>
                 );
             case "Skills":
@@ -57,38 +76,36 @@ export default function App() {
                         transition={{ duration: 0.5 }}
                         className="mt-6"
                     >
-                        <h2 className="text-2xl font-semibold mb-4">Skills</h2>
+                        <h2 className="text-2xl font-semibold mb-6 border-b pb-2">Skills</h2>
                         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
-                            <div>
-                                <h3 className="text-lg font-semibold mb-2">Lenguajes</h3>
-                                <ul className="list-disc pl-4">
+                            <div className="bg-white rounded-xl shadow-md p-4">
+                                <h3 className="text-lg font-semibold mb-2 text-blue-600">Languages</h3>
+                                <ul className="list-disc pl-4 text-sm text-gray-700 space-y-1">
                                     <li>JavaScript</li>
                                     <li>PHP</li>
                                     <li>Python</li>
-                                    <li>C++</li>
                                 </ul>
                             </div>
-                            <div>
-                                <h3 className="text-lg font-semibold mb-2">Frameworks</h3>
-                                <ul className="list-disc pl-4">
+                            <div className="bg-white rounded-xl shadow-md p-4">
+                                <h3 className="text-lg font-semibold mb-2 text-blue-600">Frameworks</h3>
+                                <ul className="list-disc pl-4 text-sm text-gray-700 space-y-1">
                                     <li>Laravel</li>
                                     <li>React / Vue</li>
                                     <li>Node.js</li>
                                     <li>NestJS</li>
-                                    <li>Tailwind CSS</li>
                                 </ul>
                             </div>
-                            <div>
-                                <h3 className="text-lg font-semibold mb-2">Databases</h3>
-                                <ul className="list-disc pl-4">
+                            <div className="bg-white rounded-xl shadow-md p-4">
+                                <h3 className="text-lg font-semibold mb-2 text-blue-600">Databases</h3>
+                                <ul className="list-disc pl-4 text-sm text-gray-700 space-y-1">
                                     <li>MongoDB</li>
                                     <li>MySQL</li>
                                     <li>PostgreSQL</li>
                                 </ul>
                             </div>
-                            <div>
-                                <h3 className="text-lg font-semibold mb-2">Others</h3>
-                                <ul className="list-disc pl-4">
+                            <div className="bg-white rounded-xl shadow-md p-4">
+                                <h3 className="text-lg font-semibold mb-2 text-blue-600">Others</h3>
+                                <ul className="list-disc pl-4 text-sm text-gray-700 space-y-1">
                                     <li>Git / GitHub</li>
                                     <li>Google Teams</li>
                                     <li>Figma</li>
@@ -97,19 +114,18 @@ export default function App() {
                         </div>
                     </motion.div>
                 );
-            case "Education & Work Exp.":
+            case "Education":
                 return (
                     <motion.div
-                        key="Education & Work Exp."
+                        key="Education."
                         initial={{ opacity: 0, x: 20 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.5 }}
                         className="mt-6"
                     >
-                        <h2 className="text-2xl font-semibold mb-2">Education & Work Exp.</h2>
-                        <ul className="list-disc pl-6">
+                        <h2 className="text-2xl font-semibold mb-4 border-b pb-2">Education</h2>
+                        <ul className="list-disc pl-6 text-sm text-gray-700">
                             <li>CUCEI - Computer Engineering (Studying) since 2022</li>
-                            <li>English level B2</li>
                         </ul>
                     </motion.div>
                 );
@@ -134,10 +150,10 @@ export default function App() {
                 >
                     <img
                         src="./fotoPerfil.JPEG"
-                        alt="Foto de perfil"
+                        alt="profile"
                         className="rounded-full w-28 h-28 mb-4 shadow-lg"
                     />
-                    <h1 className="text-4xl font-bold mb-1">Brayan Oswaldo Cano López</h1>
+                    <h1 className="text-4xl font-bold mb-1 text-center">Brayan Oswaldo Cano López</h1>
                     <p className="text-gray-500 text-lg">Full Stack Developer</p>
                 </motion.div>
 
