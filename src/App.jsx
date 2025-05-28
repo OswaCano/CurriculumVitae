@@ -83,14 +83,13 @@ export default function App() {
                                 <ul className="list-disc pl-4 text-sm text-gray-700 space-y-1">
                                     <li>JavaScript</li>
                                     <li>PHP</li>
-                                    <li>Python</li>
                                 </ul>
                             </div>
                             <div className="bg-white rounded-xl shadow-md p-4">
                                 <h3 className="text-lg font-semibold mb-2 text-blue-600">Frameworks</h3>
                                 <ul className="list-disc pl-4 text-sm text-gray-700 space-y-1">
                                     <li>Laravel</li>
-                                    <li>React / Vue</li>
+                                    <li>React</li>
                                     <li>Node.js</li>
                                     <li>NestJS</li>
                                 </ul>
@@ -100,15 +99,13 @@ export default function App() {
                                 <ul className="list-disc pl-4 text-sm text-gray-700 space-y-1">
                                     <li>MongoDB</li>
                                     <li>MySQL</li>
-                                    <li>PostgreSQL</li>
                                 </ul>
                             </div>
                             <div className="bg-white rounded-xl shadow-md p-4">
                                 <h3 className="text-lg font-semibold mb-2 text-blue-600">Others</h3>
                                 <ul className="list-disc pl-4 text-sm text-gray-700 space-y-1">
                                     <li>Git / GitHub</li>
-                                    <li>Google Teams</li>
-                                    <li>Figma</li>
+                                    <li>Postman</li>
                                 </ul>
                             </div>
                         </div>
@@ -127,15 +124,16 @@ export default function App() {
                         <ul className="list-disc pl-6 text-sm text-gray-700">
                             <li>CUCEI - Computer Engineering (Studying) since 2022</li>
                         </ul>
+                        <h2 className="text-2xl font-semibold mb-4 border-b pb-2">Languages</h2>
+                        <ul className="list-disc pl-6 text-sm text-gray-700">
+                            <li>Spanish (native)</li>
+                            <li>English (B2 level)</li>
+                        </ul>
                     </motion.div>
                 );
             default:
                 return null;
         }
-    };
-
-    const handlePrint = () => {
-        window.print();
     };
 
     return (
@@ -186,9 +184,6 @@ export default function App() {
                     <a href="https://linkedin.com/in/oswaldo-cano-847735323" target="_blank" rel="noopener noreferrer">
                         <FaLinkedin className="w-6 h-6 text-gray-600 hover:text-blue-600" />
                     </a>
-                    <button onClick={handlePrint}>
-                        <FaPrint className="w-6 h-6 text-gray-600 hover:text-gray-800" />
-                    </button>
                 </div>
             </footer>
         </div>
